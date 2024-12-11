@@ -86,7 +86,7 @@ nav{
     background: #010101;
     min-height: 50vw; /* Varmistaa, että jokainen osio on riittävän korkea */
     position: relative; /* Varmistaa oikean skrollaustason */
-    margin-top: 100vh; /* Estää peittymisen ja alkaa sankariosion alareunasta */
+    margin-top: 50vh; /* Estää peittymisen ja alkaa sankariosion alareunasta */
 }
 
 .section + .section {
@@ -103,7 +103,6 @@ nav{
 }
 
 #contact {
-
   background: rgb(71, 71, 71);
 }
 .image-overlay {
