@@ -1,0 +1,206 @@
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    float: right;
+    padding: 2vh;
+    color: rgb(212, 212, 212);
+    text-decoration: none;
+  }  
+  a:hover {
+    color: rgb(133, 131, 131);
+  }
+  a:active {
+    color: rgb(255, 0, 0);
+  }
+  a:active::after {
+    color: crimson;
+  }
+  body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+p{
+  color: aliceblue;
+}
+
+.floatl{
+    float: left;
+}
+nav{
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    z-index: 1000;
+
+  }
+  li a {
+    float: right;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0%;
+    margin-top: 1%;
+    overflow: hidden;
+  }
+  h2{
+    font-size: 3vw;
+    color: rgb(212, 212, 212);
+  }
+  h1{
+    color: rgb(224, 223, 223);
+    text-align: left;
+    font-size:xx-large;
+    padding-left: 5%;
+    margin-top: 10%;
+  }
+  .p-hero{
+    color: rgb(241, 238, 238);
+    text-align: left;
+    padding-left: 5%;
+  }
+
+  .hero {
+    height: 100vh;
+    background: url('muokattu.jpg') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    position: fixed; /* Tausta pysyy paikallaan */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1; /* Tausta jää kaikkien muiden osioiden alle */
+    
+}
+
+.section {
+    padding: 50px;
+    text-align: center;
+    background: #010101;
+    min-height: 50vw; /* Varmistaa, että jokainen osio on riittävän korkea */
+    position: relative; /* Varmistaa oikean skrollaustason */
+    margin-top: 100vh; /* Estää peittymisen ja alkaa sankariosion alareunasta */
+}
+
+.section + .section {
+    margin-top: -1px; /* Korjaa mahdolliset pienet näkyvät rajaviivat */
+}
+
+#about {
+  background: rgb(234, 234, 234);
+  
+}
+
+#projects {
+  background: rgb(15, 15, 6);
+}
+
+#contact {
+
+  background: rgb(71, 71, 71);
+}
+.image-overlay {
+  display: inline-block;
+  position: relative; /* Tarvitaan sisäisten elementtien sijoitteluun */
+  width: 200px; /* Kuvan/leveyden määrittely */
+  height: 200px;
+  margin: 50px;
+  background-image: var(--bg-image);
+  background-size: cover; /* Skaalaa tausta sopivaksi */
+  background-position: center; /* Keskittää taustakuvan */
+  text-decoration: none; /* Poistaa alleviivauksen */
+  overflow: hidden; /* Estää sisällön vuotamisen ulos */
+  cursor: pointer;
+  transition: backround 0.3s ease-in-out; /* Sulava taustamuutos */
+}
+
+/* Hover-tila: kuva katoaa, keltainen tausta ja teksti näkyy */
+.image-overlay:hover {
+  background: rgba(228, 228, 0, 0.716); /* Vaihtaa taustaksi keltaisen */
+}
+
+/* Teksti piilotettuna normaalitilassa */
+.overlay-text {
+  position: absolute; /* Asettuu suhteessa linkin sisälle */
+  top: 50%; /* Keskittää tekstin pystysuunnassa */
+  left: 50%; /* Keskittää tekstin vaakasuunnassa */
+  transform: translate(-50%, -50%); /* Tarkka keskipiste */
+  color: rgb(29, 29, 29); /* Tekstin väri */
+  font-size: 18px; /* Tekstin koko */
+  font-weight: bold;
+  text-align: center;
+  opacity: 0; /* Piilottaa tekstin normaalitilassa */
+  transition: opacity 0.3s ease-in-out; /* Sulava siirtymä */
+}
+
+/* Hover-tila: teksti näkyy */
+.image-overlay:hover .overlay-text {
+  opacity: 1; /* Teksti tulee näkyviin hover-tilassa */
+}
+/* Yhteystietosektio */
+.contact-section {
+  display: flex; /* Sijoittaa elementit vierekkäin */
+  justify-content: space-between; /* Jakaa tilaa tasaisesti */
+  align-items: flex-start; /* Kohdistaa elementit yläreunaan */
+  gap: 20px; /* Lisää väliä elementtien välille */
+  flex-wrap: wrap; /* Pinoaa elementit pienemmillä näytöillä */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Yhteystieto-osio (kuva ja linkit) */
+.contact-info {
+  flex: 1; /* Sijoittaa suhteessa saman verran tilaa kuin lomake */
+  min-width: 300px; /* Määrittää vähimmäisleveyden */
+  text-align: center;
+}
+
+.contact-image {
+  border-radius: 50%;
+   float:center;
+   width: 20vw;
+   height: 20vw;
+}
+.social-links {
+  display: flex;
+  flex-direction: column; /* Linkit pinoutuvat päällekkäin */
+  gap: 10px;
+}
+footer {
+  position: fixed; /* Kiinnittää footerin näkymän alareunaan */
+  bottom: 0; /* Sijoittaa footerin aivan alareunaan */
+  left: 0; /* Sijoittaa footerin vasempaan reunaan */
+  width: 100%; /* Varmistaa, että footer peittää koko leveyden */
+  background: rgba(0, 0, 0, 0.8); /* Tumma, läpikuultava tausta */
+  color: white; /* Tekstin väri */
+  text-align: center; /* Keskittää tekstin */
+  padding: 10px 0; /* Lisää sisäistä tilaa ylä- ja alareunoihin */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Lisää varjoa */
+  font-size: 14px;
+}
+.back-to-top {
+position: fixed; /* Kiinnitetty ruutuun */
+bottom: 20px; /* Sijoitus alareunasta */
+right: 20px; /* Sijoitus oikeasta reunasta */
+background: #333; /* Tumma tausta */
+color: white; /* Valkoinen teksti */
+padding: 10px 15px; /* Sisäinen marginaali */
+border-radius: 5px; /* Pyöristetyt kulmat */
+font-size: 14px; /* Tekstin koko */
+text-align: center; /* Keskitetty teksti */
+cursor: pointer; /* Osoitin muuttuu klikattavaksi */
+display: none; /* Aluksi piilotettu */
+z-index: 1000; /* Varmistaa, että näkyy päällimmäisenä */
+transition: opacity 0.3s ease; /* Sulava näyttö/animaatio */
+}
+.back-to-top:hover {
+background: #555; /* Tummempi tausta hover-tilassa */
+}

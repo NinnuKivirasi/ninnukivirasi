@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettisivuni</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <nav>
+        <p class="floatl"><img src="oma_logo.png" width="35%" height="35%"></p>
+        <ul>
+            <li><a href=#contact>Ota yhteyttä</a></li>
+          <li><a href=#projects>Projektit</a></li>
+          <li><a href=#about>CV</a></li>
+          <li><a href=#home>Etusivu</a></li>
+        </ul>
+      </nav>
+
+    <section id="home" class="hero">
+        <h1>Hei kiva, kun löysit mun sivulle!</h1>
+        <p class="p-hero"> 
+            Olen Nina Kivirasi ja asun Espoossa. Harrastukseni on frisbeegolfin pelaaminen <br>
+            ja jääkiekon katsominen. Ammattitaitoni kattaa laajan kirjon <br>
+            eri aloja. Olen tottunut toimimaan hektisissäympäristöissä ja hallitsemaan<br>
+            monipuolisia työtehtäviä. Etsin uutta roolia, jossa voin yhdistää luovuuteni,<br>
+            käytännön osaamiseni ja haluni kehittää itseäni työntekijänä. Viimeisessä työssäni <br>
+            sain tiimiltäni kiitosta oppimisenhalusta, omatoimisuudesta, empaattisuudesta ja huumorintajusta, <br>
+            joista kaikista oli isoa hyötyä vilkkaassa työssä lasten parissa. Olen tällä hetkellä<br>
+            opiskelijana Laurean ammattikorkeakoulussa ja opiskelen IT-tradenomiksi. Olen aikaisemin <br>
+            opiskellut jo Restonomiksi ja sain reilusti hyväksilukuja Tradenomin opintoihin. Siksi olen <br>
+            jo yli puolen välin opinnoissani ja etsin työharjoittelupaikkaa. Olen kiinnostunut myös <br>
+            mahdollisuudesta suorittaa opinnäytetyön harjoittelupaikassa. <br>
+            Työharjoittelu kestää noin 6kk ja se on kokoaikainen. </p>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projektit</h2>
+        <a href="https://ninnukivirasi.github.io/teepan_sivuja/" class="image-overlay" style="--bg-image: url('TN\ COMA_logo_V4.png');">
+            <span class="overlay-text">Verkkosivujen kehittäminen</span>
+        </a>
+
+        <a href="https://apps.powerapps.com/play/e/90f81383-dfaf-e8dc-854e-6f57142f5645/a/f5d61232-7e09-4363-9338-6d7f326e38aa?tenantId=f0b9e9d7-8d66-4b16-9c1c-6b07c4796280&hint=3c03cb6c-8966-40b4-839a-a1f8a21110e2&sourcetime=1733928346296" class="image-overlay" style="--bg-image: url('Frame\ 1.png');">
+            <span class="overlay-text">Modelling a Digital Service</span>
+        </a>
+
+    </section>
+
+    <section id="about" class="section">
+        <h2>CV</h2>
+        <p><a href="Nina Kivirasi_cv_2024_.pdf" target="_blank"><img src="Cv_ni.png" alt="" width="30%" >Nina_Kivirasi_cv_2024</a></p>
+    <p><a href="opintosuoritusote_2024-12-11.pdf" target="_blank">Opintosuorite 11.12.2024</a></p></section>
+
+    <section id="contact" class="section">
+ 
+            <div class="contact-info">
+                <img src="ninakivirasi.jpeg" alt="Yhteystiedot kuva" class="contact-image">
+                <h3>Nina Kivirasi</h3>
+                <p>Jos kiinnostuit yhtään, niin ole minuun yhteydessä. <br> 
+                    Voit laittaa viestiä sähköpostilla, puhelimeen tai Linkediniin</p>
+                <p class="social-links"><a href="www.linkedin.com/in/nina-kivirasi-211091150" target="_blank" >Linkedin</a></p>
+                <p class="social-links">040 9651277</p>
+                <p class="social-links"><a href="mailto:nina.kivirasi@student.laurea.fi">nina.kivirasi@student.laurea.fi</a></p>
+            </div>
+    </section>
+    <div id="backToTop" class="back-to-top">
+        ↑ Takaisin ylös
+    </div>
+    <footer>
+        <p class="floatc" style="font-size: smaller;">© Nina Kivirasi 2024</p>
+    </footer>
+</body>
+<script>
+    // Valitaan nuoli-elementti
+    const backToTopButton = document.getElementById('backToTop');
+
+    // Näytetään/piilotetaan nuoli, kun käyttäjä skrollaa
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Näkyy, kun skrollattu 300px
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    // Palautetaan yläosaan, kun nuolta klikataan
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Sulava siirtymä ylös
+        });
+    });
+</script>
+</html>
