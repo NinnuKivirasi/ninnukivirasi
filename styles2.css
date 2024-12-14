@@ -6,12 +6,14 @@ body, h1, h2, p, ul, li {
 a{
     float: right;
     padding: 2vh;
-    color: rgb(212, 212, 212);
+    color: #f0ebeb;;
     text-decoration: none;
   }  
   a:hover {
-    color: rgb(133, 131, 131);
+    color: rgb(255, 255, 255);
+
   }
+  
   a:active {
     color: rgb(255, 0, 0);
   }
@@ -23,9 +25,13 @@ a{
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #010101;
+    background: url('tausta_v5.png') no-repeat center center/cover; 
+    background-attachment: fixed;
 }
 p{
-  color: aliceblue;
+  color: rgb(250, 249, 249);
+
 }
 
 .floatl{
@@ -33,10 +39,7 @@ p{
 }
 nav{
     width: 100%;
-    height: 40vh;
     overflow: hidden;
-    z-index: 1000;
-
   }
   li a {
     float: right;
@@ -54,39 +57,106 @@ nav{
   h1{
     color: rgb(224, 223, 223);
     text-align: left;
-    font-size:xx-large;
+    font-size:x-large;
     padding-left: 5%;
-    margin-top: 10%;
+  }
+  .h1_about{
+    color: #010101;
+    padding: 2%;
+    text-align: center;
+    margin: auto;
   }
   .p-hero{
     color: rgb(241, 238, 238);
     text-align: left;
     padding-left: 5%;
   }
+  .p-about{
+    color: #010101;
+  }
+  .a-hero{
+    color:#ece9e9;
 
-  .hero {
-    height: 100vh;
-    background: url('muokattu.jpg') no-repeat center center/cover;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    position: fixed; /* Tausta pysyy paikallaan */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1; /* Tausta jää kaikkien muiden osioiden alle */
-    
+  }
+  .a-hero:hover{
+    border: #140606;
+    border-style: groove;
+  }
+.abtn-hero{
+  float: left;
+  padding: 1vh;
+}
+  .button-hero {
+    font-size: large;
+    font-variant: small-caps;
+    background:rgb(14, 14, 14);
+    color: #ece9e9;
+    padding: 1vw;
+    border: #ece9e9;
+    border-style: dotted;
+    border-radius: 2%;
+    cursor:pointer;
+    transition: all 0.35s;
+    outline: #171717;
+    position: relative;
+    width: 20vh;
+    }
+.button-hero:hover{
+  background: rgb(246, 17, 5); /* Vaihtaa taustaksi keltaisen */
+  color: #ece9e9;;
+  border:#ece9e9;;
+  border-style: dotted;
+}
+.button-document {
+  font-size: smaller;
+  font-variant: small-caps;
+  background: rgb(237, 237, 236); /* Vaihtaa taustaksi keltaisen */
+  color: #010101;
+  border:#010101;
+  border-style: dotted;
+  border-radius: 2%;
+  cursor:pointer;
+  transition: all 0.35s;
+  outline: #171717;
+  width:auto;
+  }
+.button-document:hover{
+  background:rgb(14, 14, 14);
+  color: #ece9e9;
+  border: #ece9e9;
+  border-style: dotted;
 }
 
+td{
+  width: 30%;
+  padding: 3vh;
+  align-content: first baseline ;
+}
+.table-document{
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  padding: auto;
+}
+.hero {
+  height: 80vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1; /* Tausta jää kaikkien muiden osioiden alle */
+}
 .section {
     padding: 50px;
     text-align: center;
     background: #010101;
     min-height: 50vw; /* Varmistaa, että jokainen osio on riittävän korkea */
     position: relative; /* Varmistaa oikean skrollaustason */
-    margin-top: 50vh; /* Estää peittymisen ja alkaa sankariosion alareunasta */
+
 }
 
 .section + .section {
@@ -94,17 +164,22 @@ nav{
 }
 
 #about {
-  background: rgb(234, 234, 234);
-  
+  background: rgba(228, 228, 0); 
 }
 
 #projects {
   background: rgb(15, 15, 6);
 }
 
+#documents{
+  background: rgb(240, 240, 240);
+
+}
+
 #contact {
   background: rgb(71, 71, 71);
 }
+
 .image-overlay {
   display: inline-block;
   position: relative; /* Tarvitaan sisäisten elementtien sijoitteluun */
@@ -122,7 +197,7 @@ nav{
 
 /* Hover-tila: kuva katoaa, keltainen tausta ja teksti näkyy */
 .image-overlay:hover {
-  background: rgba(228, 228, 0, 0.716); /* Vaihtaa taustaksi keltaisen */
+  background: rgba(228, 228, 0); /* Vaihtaa taustaksi keltaisen */
 }
 
 /* Teksti piilotettuna normaalitilassa */
@@ -202,4 +277,92 @@ transition: opacity 0.3s ease; /* Sulava näyttö/animaatio */
 }
 .back-to-top:hover {
 background: #555; /* Tummempi tausta hover-tilassa */
+}
+
+.image-gallery {
+  display: flex;
+  gap: 20px; /* Väli kuvien välillä */
+}
+
+/* Thumbnail-konteiner */
+.thumbnail {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Thumbnail-kuva */
+.thumbnail img {
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Hieno zoomausefekti */
+}
+
+/* Hover-efekti kuvalle */
+.thumbnail:hover img {
+  transform: scale(1.1); /* Kuva zoomautuu hieman */
+  filter: brightness(0) saturate(100%) hue-rotate(60deg);
+}
+
+/* Tekstin lisäys */
+.thumbnail::after {
+  content: attr(data-info); /* Haetaan tekstisisältö data-info-attribuutista */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Hieno siirtymäefekti */
+  white-space: nowrap; /* Teksti pysyy yhdellä rivillä */
+}
+
+/* Hover-efekti tekstille */
+.thumbnail:hover::after {
+  opacity: 1; /* Teksti tulee näkyviin */
+}
+
+/* Modaalin tyyli */
+.modal {
+  display: none; /* Piilotetaan oletuksena */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Scrollattava, jos sisältö on liian suuri */
+  background-color: rgba(0, 0, 0, 0.8); /* Tumma läpinäkyvä tausta */
+}
+
+/* Kuva modaalissa */
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.modal-content:hover {
+  transform: scale(1.5); /* Zoomaa kuvaa hoverilla */
+}
+/* Sulkupainike */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close:hover {
+  color: #bbb;
 }
