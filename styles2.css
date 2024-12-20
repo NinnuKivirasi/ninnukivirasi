@@ -353,7 +353,7 @@ background: #555; /* Tummempi tausta hover-tilassa */
 }
 /* Sulkupainike */
 .close {
-  position: absolute;
+  position:fixed;
   top: 2vw;
   right: 2vw;
   color: white;
@@ -365,4 +365,49 @@ background: #555; /* Tummempi tausta hover-tilassa */
 
 .close:hover {
   color: #bbb;
+}
+.contact-form {
+  max-width: 30vw;
+  margin: 0 auto;
+  padding: 2vw;
+  border: 1px solid #434343;
+  border-radius: 1vw;
+  background-color: #434343;
+  color:#ece9e9 ;
+  font-size: smaller;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 1vw;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  padding: 1vw;
+  margin-bottom: 2vw;
+  border: 1px solid #ccc;
+  border-radius: 1vw;
+  font-size: smaller;
+}
+
+.contact-form button {
+  background: #ffffff;
+  color: rgb(17, 17, 17);
+  border: none;
+  padding: 1vw;
+  font-size: smaller;
+  border-radius: 1vw;
+  border-style: dotted;
+  border-color: #010101;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #000000;
+  color: #ece9e9;
+  border-color: #ece9e9;
+  border-style: dotted;
 }
