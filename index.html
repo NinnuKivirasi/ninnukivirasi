@@ -102,80 +102,43 @@
 
         <h2>Projektit</h2>
 
-            <table>
-                <tr>
-                    <th>
-                        <a href="https://github.com/NinnuKivirasi" target="_blank" class="image-overlay" style="--bg-image: url('GitHub.png');">
-                            <span class="overlay-text">Github profile</span>
-                        </a>
-                    </th>
-                    <th>
-                        <!--EMPTY-->
-                    </th>
-                    <th>
-                        <a href="https://ninnukivirasi.github.io/teepan_sivuja/" target="_blank" class="image-overlay" style="--bg-image: url('TN\ COMA_logo_V4.png');">
-                            <span class="overlay-text">Verkkosivujen kehittäminen - Ensimmäiset verkkosivut yritykselle</span>
-                        </a>
-                    </th>
+            <div class="grid">
+                <a href="https://github.com/NinnuKivirasi" target="_blank" class="image-overlay" style="--bg-image: url('GitHub.png');">
+                    <span class="overlay-text">Github profile</span>
+                </a>
 
+                <a href="https://ninnukivirasi.github.io/teepan_sivuja/" target="_blank" class="image-overlay" style="--bg-image: url('TN_COMA_logo_V4.png');">
+                    <span class="overlay-text">Verkkosivujen kehittäminen - Ensimmäiset verkkosivut yritykselle</span>
+                </a>
 
-                </tr>
-            </table>
+                <a href="https://ninnukivirasi.github.io/javascript-project1/" target="_blank" class="image-overlay" style="--bg-image: url('chroniccompanion.png');">
+                    <span class="overlay-text">Javascript projekti 1</span>
+                </a>
+
+                <a href="https://ninnukivirasi.github.io/javascript-project2/" target="_blank" class="image-overlay" style="--bg-image: url('virtualshelf.png');">
+                    <span class="overlay-text">Javascript projekti 2</span>
+                </a> 
+            </div>
     </section>
 
     <!--Dokumentit/documents-->
     <section id="documents" class="section">
+  <h2>Dokumentit</h2>
 
-        <h2 style="color: black;">Dokumentit</h2>
+  <div class="grid">
+    <a href="Nina_Kivirasi_cv_uusi.pdf" target="_blank"
+       class="image-overlay"
+       style="--bg-image: url('CV_pikkukuva_1.png');">
+      <span class="overlay-text">CV (PDF)</span>
+    </a>
 
-            <table class="table-document">
-                <tr>
-                    <div id="imageModal" class="modal">
-                        <span class="close" onclick="closeModal()">&times;
-                        </span>
-                            <img class="modal-content" id="modalImage">
-                        <td >
-                            <div class="image-gallery">
-                                <div class="thumbnail" data-info="Cv 2025">
-                                    <img src="CV_pikkukuva_1.png" alt="Esikatselukuva" class="thumbnail" data-full="Nina_Kivirasi_cv_uusi.png" onclick="openModal(this)">
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="image-gallery">   
-                                <div class="thumbnail" data-info="Opintosuorite 18.08.2025">
-                                    <img src="opintosuorite.png" alt="Esikatselukuva" class="thumbnail" data-full="opintosuorite_18082025.png" onclick="openModal(this)">
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                             <!--EMPTY-->
-                        </td>
-                        <td>
-                            <!--EMPTY-->
-                        </td>
-                    </div>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="image-gallery">
-                            <a href="Nina_Kivirasi_cv_uusi.pdf" target="_blank"><button class="button-document">Nina_Kivirasi_cv_2025.pdf</button></a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="image-gallery">
-                            <a href="opintosuoritusote_2025-08-18.pdf" target="_blank"><button class="button-document">Opintosuoritusote_2025-08-18.pdf</button></a>
-                        </div>
-                    </td>
-                    <td>
-                        <!--EMPTY-->
-                    </td>
-                    <td>
-                        <!--EMPTY-->
-                    </td>
-                </tr>
-            </table>
-    </section>
+    <a href="opintosuoritusote_2025-08-18.pdf" target="_blank"
+       class="image-overlay"
+       style="--bg-image: url('opintosuorite.png');">
+      <span class="overlay-text">Opintosuoritusote</span>
+    </a>
+  </div>
+</section>
 
     <!--Yhteystiedot/contact-->
     <section id="contact" class="section">
@@ -220,7 +183,7 @@
         ↑ Takaisin ylös
     </div>
     <footer>
-        <p class="floatc" style="font-size: smaller;">© Nina Kivirasi 2025</p>
+        <p style="font-size: smaller;">© Nina Kivirasi 2025</p>
     </footer>
 </body>
 <script>
@@ -243,19 +206,5 @@
             behavior: 'smooth' // Sulava siirtymä ylös
         });
     });
-</script>
-<script>
-    function openModal(image) {
-        const modal = document.getElementById("imageModal");
-        const modalImage = document.getElementById("modalImage");
-        
-        modal.style.display = "block";
-        modalImage.src = image.getAttribute("data-full"); // Suurempi kuva
-    }
-
-    function closeModal() {
-        const modal = document.getElementById("imageModal");
-        modal.style.display = "none";
-    }
 </script>
 </html>

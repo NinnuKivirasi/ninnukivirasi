@@ -3,8 +3,9 @@ body, h1, h2, p, ul, li {
     padding: 0;
     list-style: none;
 }
+
 a{
-    float: right;
+    display: flex;
     padding: 1vw;
     color: #f0ebeb;;
     text-decoration: none;
@@ -33,7 +34,6 @@ p{
   color: rgb(250, 249, 249);
 
 }
-
 .floatl{
     float: left;
 }
@@ -83,7 +83,7 @@ nav{
     border-style: groove;
   }
 .abtn-hero{
-  float: left;
+  display: flex;
   padding: 1vw;
 }
   .button-hero {
@@ -107,40 +107,10 @@ nav{
   border:#ece9e9;;
   border-style: dotted;
 }
-.button-document {
-  font-size: small;
-  font-variant: small-caps;
-  background: rgb(237, 237, 236); /* Vaihtaa taustaksi keltaisen */
-  color: #010101;
-  border:#010101;
-  border-style: dotted;
-  border-radius: 2%;
-  cursor:pointer;
-  transition: all 0.35s;
-  outline: #171717;
-  width:20vw;
-  float: left;
-  }
-.button-document:hover{
-  background:rgb(14, 14, 14);
-  color: #ece9e9;
-  border: #ece9e9;
-  border-style: dotted;
-}
 
-td{
-  width: 30%;
-  padding: 1vw;
-  align-content: first baseline ;
-}
-.table-document{
-  text-align: center;
-  align-content: center;
-  align-items: center;
-  padding: auto;
-}
 .hero {
-  height: 40vw;
+  min-height: 80vh;
+  height: auto;
   color: white;
   display: flex;
   flex-direction: column;
@@ -164,6 +134,14 @@ td{
     margin-top: -1vw; /* Korjaa mahdolliset pienet näkyvät rajaviivat */
 }
 
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 5vw;
+    justify-items: center;
+  }
+
+
 #about {
   background: rgba(228, 228, 0); 
 }
@@ -184,8 +162,8 @@ td{
 .image-overlay {
   display: inline-block;
   position: relative; /* Tarvitaan sisäisten elementtien sijoitteluun */
-  width: 20vw; /* Kuvan/leveyden määrittely */
-  height: 20vw;
+  width: 15vw; /* Kuvan/leveyden määrittely */
+  height: 15vw;
   margin: 2vw;
   background-image: var(--bg-image);
   background-size: cover; /* Skaalaa tausta sopivaksi */
@@ -219,17 +197,6 @@ td{
 .image-overlay:hover .overlay-text {
   opacity: 1; /* Teksti tulee näkyviin hover-tilassa */
 }
-/* Yhteystietosektio */
-.contact-section {
-  display: flex; /* Sijoittaa elementit vierekkäin */
-  justify-content: space-between; /* Jakaa tilaa tasaisesti */
-  align-items: flex-start; /* Kohdistaa elementit yläreunaan */
-  gap: 1vw; /* Lisää väliä elementtien välille */
-  flex-wrap: wrap; /* Pinoaa elementit pienemmillä näytöillä */
-  padding: 1vw;
-  max-width: 50vw;
-  margin: 0 auto;
-}
 
 /* Yhteystieto-osio (kuva ja linkit) */
 .contact-info {
@@ -240,12 +207,14 @@ td{
 
 .contact-image {
   border-radius: 50%;
-   float:center;
+  float:center;
    width: 20vw;
    height: 20vw;
 }
 .social-links {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-direction: column; /* Linkit pinoutuvat päällekkäin */
   gap: 1vw;
 }
@@ -279,93 +248,7 @@ transition: opacity 0.3s ease; /* Sulava näyttö/animaatio */
 background: #555; /* Tummempi tausta hover-tilassa */
 }
 
-.image-gallery {
-  display: flex;
-  gap: 2vw; /* Väli kuvien välillä */
-}
 
-/* Thumbnail-konteiner */
-.thumbnail {
-  position: relative;
-  width: 20vw;
-  height: 20vw;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-/* Thumbnail-kuva */
-.thumbnail img {
-  object-fit: cover;
-  transition: transform 0.3s ease; /* Hieno zoomausefekti */
-}
-
-/* Hover-efekti kuvalle */
-.thumbnail:hover img {
-  transform: scale(1.1); /* Kuva zoomautuu hieman */
-  filter: brightness(0) saturate(100%) hue-rotate(60deg);
-}
-
-/* Tekstin lisäys */
-.thumbnail::after {
-  content: attr(data-info); /* Haetaan tekstisisältö data-info-attribuutista */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgb(255, 255, 255);
-  font-size: 1vw;
-  font-weight: bold;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s ease; /* Hieno siirtymäefekti */
-  white-space: nowrap; /* Teksti pysyy yhdellä rivillä */
-}
-
-/* Hover-efekti tekstille */
-.thumbnail:hover::after {
-  opacity: 1; /* Teksti tulee näkyviin */
-}
-
-/* Modaalin tyyli */
-.modal {
-  display: none; /* Piilotetaan oletuksena */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; /* Scrollattava, jos sisältö on liian suuri */
-  background-color: rgba(0, 0, 0, 0.8); /* Tumma läpinäkyvä tausta */
-}
-
-/* Kuva modaalissa */
-.modal-content {
-  display: block;
-  margin: auto;
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 1vw;
-  box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.2);
-}
-.modal-content:hover {
-  transform: scale(1.5); /* Zoomaa kuvaa hoverilla */
-}
-/* Sulkupainike */
-.close {
-  position:fixed;
-  top: 2vw;
-  right: 2vw;
-  color: white;
-  font-size: 2vw;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.close:hover {
-  color: #bbb;
-}
 .contact-form {
   max-width: 30vw;
   margin: 0 auto;
@@ -410,4 +293,132 @@ background: #555; /* Tummempi tausta hover-tilassa */
   color: #ece9e9;
   border-color: #ece9e9;
   border-style: dotted;
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+    p {
+      font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+
+
+    h1 {
+      text-align: center;
+      padding-left: 0;
+      font-size: clamp(1.4rem, 5vw, 2rem);
+    }
+
+    h2 {
+      text-align: center;
+      padding-left: 0;
+      font-size: clamp(1.6rem, 6vw, 2.5rem);
+    }
+
+    /* NAVIGAATIO */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1vw;
+        padding: 3vw 0;
+    }
+
+    nav a {
+        padding: 1vw;
+        font-size: 4vw;
+    }
+
+    nav img {
+        width: 50vw;
+        height: auto;
+        float: none;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* HERO */
+    .hero {
+        height: auto;
+        padding: 10vw 5vw;
+        text-align: center;
+        align-items: center;
+    }
+
+    .p-hero {
+        padding-left: 0;
+        font-size: 4vw;
+        text-align: center;
+    }
+
+    .button-hero {
+        width: 40vw;
+        padding: 3vw;
+        font-size: 4vw;
+        margin-top: 5vw;
+    }
+
+  .section {
+        padding: 10vw 4vw;
+        min-height: auto;
+    }
+
+  .image-overlay {
+        width: 40vw;
+        height: 40vw;
+        margin: 3vw auto;
+    }
+
+  .overlay-text {
+        font-size: 3.5vw;
+    }
+
+
+
+    /* KONTAKTIOSIO */
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-image {
+        width: 50vw;
+        height: 50vw;
+        margin-bottom: 5vw;
+    }
+
+    .contact-form {
+        max-width: 80vw;
+        font-size: 4vw;
+        padding: 5vw;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        font-size: 4vw;
+        padding: 3vw;
+        border-radius: 3vw;
+    }
+
+    /* FOOTER */
+    footer {
+        position: relative;
+        padding: 4vw;
+        font-size: 3.5vw;
+    }
+
+    /* BACK TO TOP BUTTON */
+    .back-to-top {
+        bottom: 4vw;
+        right: 4vw;
+        padding: 3vw 4vw;
+        border-radius: 3vw;
+        font-size: 4vw;
+    }
 }
